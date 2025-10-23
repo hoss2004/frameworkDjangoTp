@@ -1,0 +1,8 @@
+<h2>Détails de la conférence</h2>
+<div class="detail-container">
+    <h3>{{ conference.name }}</h3>
+    <p><strong>Date début :</strong> {{ conference.start_date }}</p>
+    <p><strong>Date fin :</strong> {{ conference.end_date }}</p>
+    <p><strong>Description :</strong> {{ conference.description }}</p>
+    <a href="{% url 'conference_liste' %}" class="back-btn">Retour à la liste</a>
+</div>

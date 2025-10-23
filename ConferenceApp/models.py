@@ -75,4 +75,3 @@ class Submission(models.Model):
             raise ValidationError("Vous avez déjà atteint la limite de 3 soumissions pour aujourd'hui.")
 
 
-

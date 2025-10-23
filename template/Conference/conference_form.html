@@ -1,0 +1,15 @@
+
+{% if view.object.pk %} <!-- acceder lil primary key il tebaath fel url -->
+
+<h2>Modifier une conference</h2>
+{% else %}
+<h2>Ajouter une conference</h2>
+{% endif %}
+<form method="post">
+    {% csrf_token %} 
+    {{form.as_p}}
+    <button type="submit">Enregistrer</button>
+
+
+
+</form>

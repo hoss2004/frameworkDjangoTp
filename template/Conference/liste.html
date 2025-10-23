@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>La liste des conférences</h2>
+<div>
+    <a href="{% url 'conference_add' %}" >
+        Ajouter une conférence
+    </a>
+</div>
+<table border="1px">
+    <tr>
+        <td>Title</td>
+        <td>Location</td>
+        <td>Description</td>
+        <td>Theme</td>
+        <td>StartDate</td>
+        <td>EndDate</td>
+        <td>Détails</td>*
+        <td>Modifier</td>
+    </tr>
+    {% for c in liste %}
+    <tr>
+        <td>{{ c.name }}</td>
+        <td>{{ c.location }}</td>
+        <td>{{ c.description }}</td>
+        <td>{{ c.theme }}</td>
+        <td>{{ c.start_date }}</td>
+        <td>{{ c.end_date }}</td>
+
+        <td><a href="{% url 'ConferenceDetails' c.pk %}">Voir détails</a></td>
+        <td><a href="{% url 'conference_edit' c.pk %}">Modifier</a></td>
+        <td><a href="{% url 'conference_delete' c.pk %}">Delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
