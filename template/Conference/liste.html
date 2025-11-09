@@ -27,6 +27,8 @@
         <td>{{ c.end_date }}</td>
 
         <td><a href="{% url 'ConferenceDetails' c.pk %}">Voir détails</a></td>
+        {% if user.is_authenticated and user.role == "commitee" %}
+
         <td><a href="{% url 'conference_edit' c.pk %}">Modifier</a></td>
         <td><a href="{% url 'conference_delete' c.pk %}">Delete</a></td>
     </tr>
